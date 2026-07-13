@@ -1,0 +1,168 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "startEvent",
+      "category": "bpmn2",
+      "x": 50,
+      "y": 50,
+      "label": "",
+      "group": "lane1",
+      "fill": "forestgreen",
+      "outline": "#000000",
+      "color": "#000000"
+    },
+    {
+      "id": "2",
+      "type": "task",
+      "category": "bpmn2",
+      "x": 150,
+      "y": 50,
+      "label": "Task 1",
+      "group": "lane1",
+      "taskType": "receive",
+      "fill": "#FFFFFF",
+      "outline": "#000000",
+      "color": "#000000"
+    },
+    {
+      "id": "3",
+      "type": "gateway",
+      "category": "bpmn2",
+      "x": 350,
+      "y": 50,
+      "label": "",
+      "group": "lane1",
+      "gatewayType": "exclusive",
+      "fill": "#FFFFFF",
+      "outline": "#000000",
+      "color": "#000000"
+    },
+    {
+      "id": "4",
+      "type": "gateway",
+      "category": "bpmn2",
+      "x": 350,
+      "y": 150,
+      "label": "",
+      "group": "lane1",
+      "gatewayType": "parallel",
+      "fill": "#FFFFFF",
+      "outline": "#000000",
+      "color": "#000000"
+    },
+    {
+      "id": "5",
+      "type": "gateway",
+      "category": "bpmn2",
+      "x": 250,
+      "y": 150,
+      "label": "",
+      "group": "lane1",
+      "gatewayType": "inclusive",
+      "fill": "#FFFFFF",
+      "outline": "#000000",
+      "color": "#000000"
+    },
+    {
+      "id": "6",
+      "type": "task",
+      "category": "bpmn2",
+      "x": 100,
+      "y": 150,
+      "label": "Task 1",
+      "group": "lane1",
+      "taskType": "send",
+      "fill": "#FFFFFF",
+      "outline": "#000000",
+      "color": "#000000"
+    },
+    {
+      "id": "7",
+      "type": "task",
+      "category": "bpmn2",
+      "x": 600,
+      "y": 150,
+      "label": "Task 1",
+      "group": "lane1",
+      "taskType": "businessRule",
+      "fill": "#FFFFFF",
+      "outline": "#000000",
+      "color": "#000000"
+    },
+    {
+      "id": "8",
+      "type": "task",
+      "category": "bpmn2",
+      "x": 600,
+      "y": 50,
+      "label": "Task 5",
+      "group": "lane1",
+      "taskType": "script",
+      "fill": "#FFFFFF",
+      "outline": "#000000",
+      "color": "#000000"
+    },
+    {
+      "id": "9",
+      "type": "task",
+      "category": "bpmn2",
+      "x": 600,
+      "y": 50,
+      "label": "Task 5",
+      "group": "lane2",
+      "taskType": "service",
+      "fill": "#FFFFFF",
+      "outline": "#000000",
+      "color": "#000000"
+    }
+
+  ],
+  "groups": [
+    {
+      "id": "pool1",
+      "type": "pool",
+      "title": "Pool 1",
+      "category": "bpmn2",
+      "x": 50,
+      "y": 50,
+      "width": 800,
+      "height": 450,
+      "headerSize": 20,
+      "fill": "#FFFFFF",
+      "headerFill": "#FFFFFF"
+    },
+    {
+      "id": "lane1",
+      "type": "lane",
+      "title": "Lane 1",
+      "category": "bpmn2",
+      "group": "pool1",
+      "x": 0,
+      "y": 0,
+      "width": 780,
+      "height": 250,
+      "headerSize": 20,
+      "fill": "#f0f8ff",
+      "headerFill": "#FFFFFF"
+    },
+    {
+      "id": "lane2",
+      "type": "lane",
+      "title": "Lane 2",
+      "category": "bpmn2",
+      "group": "pool1",
+      "x": 0,
+      "y": 250,
+      "width": 780,
+      "height": 200,
+      "headerSize": 20,
+      "fill": "#f4fff3",
+      "headerFill": "#FFFFFF"
+    }
+  ],
+  "edges": [
+    { "source": "1", "target": "2", "data": {"type": "sequence"}},
+    { "source": "5", "target": "3", "data": {"type": "message"}}
+  ]
+}
