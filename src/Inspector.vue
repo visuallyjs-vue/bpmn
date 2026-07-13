@@ -16,15 +16,6 @@ import {
 import {ref} from "vue";
 
 const currentObj = ref(null)
-const currentType = ref(null)
-
-function renderEmptyContainer() {
-  currentType.value = ''
-}
-
-function refresh(obj) {
-  currentObj.value = obj
-}
 
 function capitalise(id) {
     return id[0].toUpperCase() + id.substring(1)
@@ -47,7 +38,7 @@ const isEvent = (obj) => obj.objectType === Node.objectType && EVENT_TYPES.inclu
 </script>
 
 <template>
-    <InspectorComponent class="vjs-bpmn-inspector" :refresh="refresh" :renderEmptyContainer="renderEmptyContainer">
+    <InspectorComponent class="vjs-bpmn-inspector" v-model="currentObj">
         <template v-if="currentObj != null">
             <template v-if="isPoolOrLane(currentObj)">
                 <div class="vjs-inspector-section">
